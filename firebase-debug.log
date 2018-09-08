@@ -1,0 +1,68 @@
+[debug] [2018-09-06T16:11:51.864Z] ----------------------------------------------------------------------
+[debug] [2018-09-06T16:11:51.872Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Samarei Morgan\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-09-06T16:11:51.872Z] CLI Version:   4.2.1
+[debug] [2018-09-06T16:11:51.873Z] Platform:      win32
+[debug] [2018-09-06T16:11:51.873Z] Node Version:  v8.11.3
+[debug] [2018-09-06T16:11:51.874Z] Time:          Thu Sep 06 2018 10:11:51 GMT-0600 (Mountain Daylight Time)
+[debug] [2018-09-06T16:11:51.875Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-09-06T16:11:51.921Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-09-06T16:11:51.922Z] > authorizing via signed-in user
+[debug] [2018-09-06T16:11:51.924Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-09-06T16:11:51.924Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+
+[debug] [2018-09-06T16:11:52.188Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-06T16:11:52.242Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/inconceivable-wits  
+ 
+[debug] [2018-09-06T16:11:52.672Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-06T16:11:52.673Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/inconceivable-wits  
+ 
+[debug] [2018-09-06T16:11:52.987Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Samarei Morgan\RPS-Multiplayer'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2018-09-06T16:12:00.651Z] Fetching environment
+[debug] [2018-09-06T16:12:00.659Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/582818727826:getServerAppConfig  
+ 
+[debug] [2018-09-06T16:12:00.661Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/582818727826/clients/_:getWebAppConfig  
+ 
+[debug] [2018-09-06T16:12:00.867Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-06T16:12:00.868Z] Starting @google-cloud/functions-emulator
+[debug] [2018-09-06T16:12:00.940Z] <<< HTTP RESPONSE 200
+[info] i  hosting[inconceivable-wits]: Serving hosting files from: y
+[info] +  hosting[inconceivable-wits]: Local server: http://localhost:5000
+[debug] [2018-09-06T16:12:06.021Z] Parsing function triggers
+[info] i  functions: No HTTPS functions found. Use firebase functions:shell if you would like to emulate other types of functions.
+[debug] [2018-09-06T16:21:06.996Z] ----------------------------------------------------------------------
+[debug] [2018-09-06T16:21:06.999Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Samarei Morgan\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-09-06T16:21:06.999Z] CLI Version:   4.2.1
+[debug] [2018-09-06T16:21:06.999Z] Platform:      win32
+[debug] [2018-09-06T16:21:06.999Z] Node Version:  v8.11.3
+[debug] [2018-09-06T16:21:07.000Z] Time:          Thu Sep 06 2018 10:21:06 GMT-0600 (Mountain Daylight Time)
+[debug] [2018-09-06T16:21:07.000Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-09-06T16:21:07.015Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-09-06T16:21:07.016Z] > authorizing via signed-in user
+[debug] [2018-09-06T16:21:07.019Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/inconceivable-wits  
+ 
+[debug] [2018-09-06T16:21:07.535Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-06T16:21:07.539Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/inconceivable-wits  
+ 
+[debug] [2018-09-06T16:21:07.820Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Samarei Morgan\RPS-Multiplayer'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2018-09-06T16:21:09.086Z] Fetching environment
+[debug] [2018-09-06T16:21:09.094Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/582818727826:getServerAppConfig  
+ 
+[debug] [2018-09-06T16:21:09.096Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/582818727826/clients/_:getWebAppConfig  
+ 
+[debug] [2018-09-06T16:21:09.337Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-06T16:21:09.338Z] Starting @google-cloud/functions-emulator
+[debug] [2018-09-06T16:21:09.411Z] <<< HTTP RESPONSE 200
+[info] i  hosting[inconceivable-wits]: Serving hosting files from: y
+[info] +  hosting[inconceivable-wits]: Local server: http://localhost:5000
+[debug] [2018-09-06T16:21:12.042Z] Parsing function triggers
+[info] i  functions: No HTTPS functions found. Use firebase functions:shell if you would like to emulate other types of functions.
