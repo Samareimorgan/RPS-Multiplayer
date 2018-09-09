@@ -11,9 +11,29 @@ $(document).ready(function() {
   };
   firebase.initializeApp(config);
 
+  var database = firebase.database;
+  //All connections will be stored in this database
+  var connectionsRef = database.ref("/connections");
+
+  var connectedRef = database.ref("info/connected");
+  var con = "";
+
+  //When the client state is connected add to connection list
+  connectedRef.on("value", function(snap) {
+    if(snap.val()) {
+      var con = connectionsRef.push(true);
+      //remove them if not connected
+      con.onDisconnect().remove();
+    }
+  },
+
   $("#launchBtn").on("click", function() {
     $("#dprPlayer").empty();
     $("#vizzini").empty();
+    $("#dprWins").empty();
+    $("#dprLosses").empty();
+    $("#vizziniWins").empty();
+    $("#vizziniLosses").empty();
     $("#challengeVid").attr("src", "https://www.youtube.com/embed/EZSx3zNZOaU?rel=0&amp;autoplay=1&amp;controls=0&amp;showinfo=0&amp;start=38&end=65");
   });
   
@@ -21,6 +41,22 @@ $(document).ready(function() {
     $("#launchBtn").hide();
     characterChoice();
   })
+  
+  
+
+
+
+  function characterChoice() {
+    var characters = ["Dread Pirate Roberts", "Vizzini"];
+    var selectCharacter = characters[Math.floor(Math.random() * characters.length)];
+    var displayName = $("#displayname").val
+    if (selectCharacter === "Dread Pirate Roberts") {
+      $("#dprplayer").innerHtml(displayName);
+    }
+    else
+      $("#vizzini").innerHtml(displayName);
+  }
+
 // On click Events - Change Color when clicking on icons --
   $("#vizziniRock").on("click",function() {
     $(this).css("color","black");
@@ -28,6 +64,7 @@ $(document).ready(function() {
 
   $("#dprRock").on("click",function() {
     $(this).css("color","red");
+    $(this).attr("id",);
   })
 
   $("#vizziniPaper").on("click",function() {
@@ -46,19 +83,36 @@ $(document).ready(function() {
     $(this).css("color","black");
   })
 
+//Game Play Variables
+ var dprRock = $("#dprRock");
+ var dprPaper = $("#dprPaper");
+ var dprScissor = $("#dprScissors");
+ var vizziniRock = $("#vizziniRock");
+ var vizziniPaper = $("#vizziniPaper");
+ var vizziniScissors = $("#vizziniScissors");
+ var vizziniWins = 0;
+ var vizziniLosses = 0;
+ var dprWins = 0;
+ var dprLosses = 0;
 
- 
-  var characters = ["Dread Pirate Roberts", "Vizzini"];
-  var selectCharacter = characters[Math.floor(Math.random()*characters.length)];
-
-  function characterChoice() {
-    if (selectCharacter === "Dread Pirate Roberts") {
-      $("#dprPlayer").text("#displayName");
-    }
-      else 
-       $("#vizzini").text("#displayName");
-
+  if (dprRock.css("color") === "red" && vizziniRock.css("color") === "black") {
+    alert(Tie);
   }
+  if (dprRock.css("color") === "red" && vizziniPaper.css("color") === "black") {
+    vizziniWins++;
+    dprLosses++;
+  }
+  if (dprRock.css("color") === "red" && vizziniScissors.css("color") === "black") {
+    dprWins();
+  }
+  
+ //win/Loss Functions
+ function dprWins() {
+   dprWins++;
+   vizziniLosses++;
+   $("#dprWins").html(dprWins);
+ }
+  
 
  
   

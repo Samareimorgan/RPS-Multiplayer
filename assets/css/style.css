@@ -24,7 +24,7 @@ body {
 
 img {
     height: 55%;
-    position: center;
+    align-content: center;
 }
 
 .col-4 {
@@ -38,11 +38,19 @@ iframe {
 .player {
     font-weight: bold;
     text-align: center;
-
 }
 
 .choice {
     font-size: 20px;
+    text-align: center;
+}
+
+.score {
+    font-weight: bold;
+    text-align: center;
+    border-top: 2px solid black;
+    padding-top: 15px;
+    
 }
 
 font-family: 'Cormorant SC', serif;
