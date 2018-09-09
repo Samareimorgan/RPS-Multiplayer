@@ -12,28 +12,55 @@ $(document).ready(function() {
   firebase.initializeApp(config);
 
   $("#launchBtn").on("click", function() {
+    $("#dprPlayer").empty();
+    $("#vizzini").empty();
     $("#challengeVid").attr("src", "https://www.youtube.com/embed/EZSx3zNZOaU?rel=0&amp;autoplay=1&amp;controls=0&amp;showinfo=0&amp;start=38&end=65");
   });
   
   $("#playBtn").on("click", function() {
     $("#launchBtn").hide();
     characterChoice();
-
-    
   })
+// On click Events - Change Color when clicking on icons --
+  $("#vizziniRock").on("click",function() {
+    $(this).css("color","black");
+  })
+
+  $("#dprRock").on("click",function() {
+    $(this).css("color","red");
+  })
+
+  $("#vizziniPaper").on("click",function() {
+    $(this).css("color","black");
+  })
+
+  $("#dprPaper").on("click",function() {
+    $(this).css("color","red");
+  })
+
+  $("#dprScissors").on("click",function() {
+    $(this).css("color","red");
+  })
+
+  $("#vizziniScissors").on("click",function() {
+    $(this).css("color","black");
+  })
+
 
  
   var characters = ["Dread Pirate Roberts", "Vizzini"];
   var selectCharacter = characters[Math.floor(Math.random()*characters.length)];
 
   function characterChoice() {
-    if (selectCharacter ==="Dread Pirate Roberts") {
-      $("#dprPlayer").html("#displayName")
+    if (selectCharacter === "Dread Pirate Roberts") {
+      $("#dprPlayer").text("#displayName");
     }
       else 
-       $("#displayName").html("#vizzini")
+       $("#vizzini").text("#displayName");
+
   }
 
+ 
   
   firebase.database().ref("Messages").on('value', function(dataSnapshot) {
   

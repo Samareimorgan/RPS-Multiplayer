@@ -38,17 +38,20 @@
       <!--First Row Column 1-->
       <div class="col-4">
         <!--Character Image-->
-        <img src="assets/images/dproberts.png" class="mt-3 img-responsive ml-5" alt="dread pirate roberts">
-        <div class="panel panel-primary">
+        <img src="assets/images/dproberts.png" class="mt-3 img-responsive" alt="dread pirate roberts">
+        <div class="panel panel-primary player">
+          <br>
           <!--Player Panel-->
-          <div class="panel-heading">Player Name: <span id="dprPlayer"></span></div>
+          <div class="panel-heading">Player Name: <span id="dprplayer"></span></div>
+          <br>
           <div class="panel-body">
-            <p>Make a Choice</p>
-            <i class="far fa-hand-rock"></i>
-            <i class="far fa-hand-paper"></i>
-            <i class="far fa-hand-scissors"></i>
+            <p class="choice">Make a Choice</p>
+            <i class="far fa-hand-rock" id="dprRock"></i>
+            <i class="far fa-hand-paper" id="dprPaper"></i>
+            <i class="far fa-hand-scissors" id="dprScissors"></i>
           </div>
         </div>
+        <br>
         <!--Score Panel-->
         <div class="panel panel-primary">
           <div class="panel-heading">Score</div>
@@ -82,7 +85,7 @@
               <div class="modal-body">
                 <form>
                   <div class="form-group">
-                    <input type="text" class="form-control" id="displayName" placeholder="Enter Name">
+                    <input type="text" class="form-control" id="displayname" placeholder="Enter Name">
                   </div>
                  <iframe id="challengeVid" class="m-0 p-0" width="450" height="300" src="https://www.youtube.com/embed/EZSx3zNZOaU?rel=0&amp;autoplay=0&amp;controls=0&amp;showinfo=0&amp;start=38&end=65" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                 </form>
@@ -99,15 +102,17 @@
       <!--First Row Column 3-->
       <div class="col-4">
         <!--Character Image-->
-        <img src="assets/images/Vizzini2.png" class="img-responsive mt-3 ml-2" alt="Vizzini">
-        <div class="panel panel-primary">
+        <img src="assets/images/Vizzini2.png" class="img-responsive mt-3" alt="Vizzini">
+        <div class="panel panel-primary player">
+          <br>
           <!--Player Panel-->
           <div class="panel-heading">Player Name: <span id="vizziniPlayer"></span></div>
+          <br>
           <div class="panel-body">
-            <p>Make a Choice</p>
-            <i class="far fa-hand-rock"></i>
-            <i class="far fa-hand-paper"></i>
-            <i class="far fa-hand-scissors"></i>
+            <p class="choice">Make a Choice</p>
+            <i class="far fa-hand-rock" id="vizziniRock"></i>
+            <i class="far fa-hand-paper" id="vizziniPaper"></i>
+            <i class="far fa-hand-scissors" id="vizziniScissors"></i>
           </div>
         </div>
         <!--Score Panel-->

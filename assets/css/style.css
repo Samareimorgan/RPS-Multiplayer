@@ -18,13 +18,13 @@ body {
 
 .videobox {
     border: 3px solid black;
-    height:50%;
-    width: 90%;
+    height:60%;
     display:block;
 }
 
 img {
     height: 55%;
+    position: center;
 }
 
 .col-4 {
@@ -35,6 +35,15 @@ iframe {
     position: center;
 }
 
+.player {
+    font-weight: bold;
+    text-align: center;
+
+}
+
+.choice {
+    font-size: 20px;
+}
 
 font-family: 'Cormorant SC', serif;
 font-family: 'Fontdiner Swanky', cursive;
