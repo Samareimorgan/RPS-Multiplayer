@@ -53,6 +53,12 @@ iframe {
     
 }
 
+#messageInput {
+    width: 100%
+}
+
+
+
 font-family: 'Cormorant SC', serif;
 font-family: 'Fontdiner Swanky', cursive;
 font-family: 'Rakkas', cursive;
