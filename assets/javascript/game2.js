@@ -11,13 +11,18 @@ $(document).ready(function () {
   };
   firebase.initializeApp(config);
 
+  //Global Variables -------
+  var playerOneName = "";
+  var playerTwoName = "";
+
+  //Firebase Variables
   var database = firebase.database();
   //All connections will be stored in this database
   var connectionsRef = database.ref("/connections");
-
   var connectedRef = database.ref("info/connected");
   var con = "";
-  var displayName = $("#displayname").val();
+  
+  //Firebase Functionality ----
 
   //When the client state is connected add to connection list
   connectedRef.on("value", function (snap) {
@@ -28,7 +33,34 @@ $(document).ready(function () {
     }
   })
 
-  console.log(displayName);
+ $("#playBtn").on("click",function(event) {
+  event.preventDefault();
+  console.log("trigger"); 
+
+  //Get database inputs
+  var name = $("#name-input").val().trim();
+  var message = $("#message-input").val().trim();
+
+  database.ref().set({
+    name: name, 
+    message: message
+  })
+
+  database.ref().on("value", function(snapshot){
+    console.log(snapshot.val());
+    var characters = ["Dread Pirate Roberts", "Vizzini"];
+    var selectCharacter = characters[Math.floor(Math.random() * characters.length)];
+    console.log(selectCharacter);
+    if (selectCharacter === "Dread Pirate Roberts") {
+      $("#dprplayer").text(snapshot.val().name);
+    }
+    else if (selectCharacter === "Vizzini")
+      $("#vizziniplayer").text(snapshot.val().name);
+
+  })
+
+ })
+  
 
   /*firebase.database().ref("Username.Messages[]").on('value', function (dataSnapshot) {
 
@@ -68,18 +100,14 @@ $(document).ready(function () {
   //Youtube link is changed to autoplay
 $("#launchBtn").on("click", function () {
   $("#challengeVid").attr("src", "https://www.youtube.com/embed/EZSx3zNZOaU?rel=0&amp;autoplay=1&amp;controls=0&amp;showinfo=0&amp;start=38&end=65");
-});
-
-$("#playGame").on("submit", function() {
   newGame();
-  displayName.push("#dprplayer");
 })
 
 //----Functions -----
 
 function newGame() {
   $("#launchBtn").hide();
-  $("#dprPlayer").empty();
+  $("#dprplayer").empty();
   $("#vizzini").empty();
   $("#dprWins").empty();
   $("#dprLosses").empty();
@@ -87,19 +115,7 @@ function newGame() {
   $("#vizziniLosses").empty();
 }
 
-
-
-  function characterChoice() {
-    var characters = ["Dread Pirate Roberts", "Vizzini"];
-    var selectCharacter = characters[Math.floor(Math.random() * characters.length)];
-    var displayName = $("#displayname").val
-    if (selectCharacter === "Dread Pirate Roberts") {
-      $("#dprplayer").innerHtml(displayName);
-    }
-    else
-      $("#vizzini").innerHtml(displayName);
-  }
-
+  
   // On click Events - Change Color when clicking on icons --
   $("#vizziniRock").on("click", function () {
     $(this).css("color", "black");
